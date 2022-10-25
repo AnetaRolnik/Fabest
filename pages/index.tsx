@@ -1,5 +1,13 @@
+import Hero from "../components/home-page/hero/Hero";
+import FeaturedPosts from "../components/home-page/featured-posts/FeaturedPosts";
+
 const HomePage = (): JSX.Element => {
-  return <h1>The Home Page</h1>;
+  return (
+    <>
+      <Hero />
+      <FeaturedPosts />
+    </>
+  );
 };
 
 export default HomePage;
