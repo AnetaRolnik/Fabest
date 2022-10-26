@@ -1,7 +1,11 @@
 .hero {
-  background: linear-gradient(to bottom right, #96c8ea, #cce0ff);
+  background: linear-gradient(to bottom right, #77d4fc, #cce0ff);
   text-align: center;
-  padding: 64px 0;
+  padding: 32px 0;
+
+  @media screen and (min-width: 992px) {
+    padding: 48px 0;
+  }
 }
 
 .avatar {

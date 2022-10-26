@@ -1,5 +1,6 @@
 import Container from "../../layout/container/Container";
 import PostsGrid from "../../posts/posts-grid/PostsGrid";
+import scss from "./FeaturedPosts.module.scss";
 
 type Props = {
   posts: {
@@ -16,8 +17,8 @@ const FeaturedPosts = (props: Props): JSX.Element => {
   const { posts } = props;
 
   return (
-    <Container>
-      <h2>Featured Posts</h2>
+    <Container styleName={scss.container}>
+      <h2 className={scss.title}>Featured Posts</h2>
       <PostsGrid posts={posts} />
     </Container>
   );
