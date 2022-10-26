@@ -1,0 +1,29 @@
+.post {
+  box-shadow: 0 1px 4px rgba(#000, 0.2);
+  text-align: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.postHeader {
+  background-color: #0a92cc;
+  padding: 8px 16px;
+}
+
+.content {
+  padding: 16px;
+
+  h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+  }
+
+  time {
+    font-style: italic;
+    color: #a1a1a1;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}

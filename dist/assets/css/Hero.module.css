@@ -1,0 +1,22 @@
+.hero {
+  background: -webkit-gradient(linear, left top, right bottom, from(#96c8ea), to(#cce0ff));
+  background: linear-gradient(to bottom right, #96c8ea, #cce0ff);
+  text-align: center;
+  padding: 64px 0;
+}
+
+.avatar {
+  border-radius: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 32px;
+  margin: 16px 0 8px;
+}
+
+.text {
+  font-size: 18px;
+}
