@@ -17,7 +17,7 @@ const FeaturedPosts = (props: Props): JSX.Element => {
   const { posts } = props;
 
   return (
-    <Container styleName={scss.container}>
+    <Container isGap={true}>
       <h2 className={scss.title}>Featured Posts</h2>
       <PostsGrid posts={posts} />
     </Container>
