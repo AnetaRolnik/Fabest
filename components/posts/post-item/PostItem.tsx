@@ -7,12 +7,12 @@ type Props = {
   slug: string;
   title: string;
   date: string;
-  description: string;
+  excerpt: string;
   image: string;
 };
 
 const PostItem = (props: Props): JSX.Element => {
-  const { slug, title, date, description, image } = props;
+  const { slug, title, date, excerpt, image } = props;
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
@@ -31,7 +31,7 @@ const PostItem = (props: Props): JSX.Element => {
         <div className={scss.content}>
           <h3>{title}</h3>
           <time>{formattedDate}</time>
-          <p>{description}</p>
+          <p>{excerpt}</p>
         </div>
       </Link>
     </li>

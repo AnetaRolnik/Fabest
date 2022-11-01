@@ -4,12 +4,13 @@ import scss from "./FeaturedPosts.module.scss";
 
 type Props = {
   posts: {
-    id: number;
     slug: string;
     title: string;
     date: string;
-    description: string;
     image: string;
+    excerpt: string;
+    content: string;
+    isFeatured: boolean;
   }[];
 };
 

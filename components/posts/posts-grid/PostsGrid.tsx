@@ -4,12 +4,13 @@ import scss from "./PostsGrid.module.scss";
 
 type Props = {
   posts: {
-    id: number;
     slug: string;
     title: string;
     date: string;
-    description: string;
     image: string;
+    excerpt: string;
+    content: string;
+    isFeatured: boolean;
   }[];
 };
 
@@ -20,12 +21,12 @@ const PostsGrid = (props: Props): JSX.Element => {
     <ul className={scss.grid}>
       {posts.map((post) => (
         <PostItem
-          key={post.id}
+          key={post.slug}
           slug={post.slug}
           title={post.title}
           date={post.date}
-          description={post.description}
-          image={post.image}
+          excerpt={post.excerpt}
+          image={`/images/${post.image}`}
         />
       ))}
     </ul>
