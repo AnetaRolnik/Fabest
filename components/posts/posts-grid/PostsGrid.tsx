@@ -26,7 +26,7 @@ const PostsGrid = (props: Props): JSX.Element => {
           title={post.title}
           date={post.date}
           excerpt={post.excerpt}
-          image={`/images/${post.image}`}
+          image={post.image}
         />
       ))}
     </ul>

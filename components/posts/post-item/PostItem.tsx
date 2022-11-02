@@ -26,7 +26,7 @@ const PostItem = (props: Props): JSX.Element => {
     <li className={scss.post}>
       <Link href={linkPath} className={scss.link}>
         <div className={scss.header}>
-          <Image src={image} width={100} height={80} alt={title} />
+          <Image src={`/images/${image}`} width={100} height={80} alt={title} />
         </div>
         <div className={scss.content}>
           <h3>{title}</h3>

@@ -11,7 +11,7 @@ const PostHeader = (props: Props): JSX.Element => {
   return (
     <>
       <h1>{title}</h1>
-      <Image src={image} width={300} height={300} alt={title} />
+      <Image src={`/images/${image}`} width={300} height={300} alt={title} />
     </>
   );
 };

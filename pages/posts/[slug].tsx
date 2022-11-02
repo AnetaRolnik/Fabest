@@ -1,27 +1,51 @@
-import ReactMarkdown from "react-markdown";
-
 import Container from "../../components/layout/container/Container";
 import PostHeader from "../../components/posts/post-detail/PostHeader";
 import PostContent from "../../components/posts/post-detail/PostContent";
+import { getPostData, getPostsFiles } from "../../helpers/posts-util";
 
-const DUMMY_POST = {
-  id: 1,
-  slug: "sample-example",
-  title: "Sample example",
-  date: "2022-02-10",
-  description: "Sample description",
-  image: "/images/logo.svg",
-  content: "## This is a first post",
+type Props = {
+  post: {
+    title: string;
+    image: string;
+    content: string;
+  };
 };
 
-const SinglePostPage = (): JSX.Element => {
+const SinglePostPage = (props: Props): JSX.Element => {
+  const { title, image, content } = props.post;
+
   return (
     <Container>
-      <PostHeader title={DUMMY_POST.title} image={DUMMY_POST.image} />
-      <PostContent />
-      <ReactMarkdown>{DUMMY_POST.content}</ReactMarkdown>
+      <PostHeader title={title} image={image} />
+      <PostContent content={content} />
     </Container>
   );
+};
+
+export const getStaticProps = (context: { params: { slug: string } }) => {
+  const { params } = context;
+  const { slug } = params;
+
+  const postData = getPostData(slug);
+
+  return {
+    props: {
+      post: postData,
+    },
+  };
+};
+
+export const getStaticPaths = () => {
+  const postFilenames = getPostsFiles();
+
+  const slugs: string[] = postFilenames.map((filename) =>
+    filename.replace(/\.md$/, "")
+  );
+
+  return {
+    paths: slugs.map((slug) => ({ params: { slug: slug } })),
+    fallback: false,
+  };
 };
 
 export default SinglePostPage;
