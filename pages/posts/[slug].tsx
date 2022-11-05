@@ -13,11 +13,12 @@ type Props = {
 };
 
 const SinglePostPage = (props: Props): JSX.Element => {
-  const { title, image, content } = props.post;
+  const { slug, post } = props;
+  const { title, image, content } = post;
 
   return (
     <Container>
-      <PostHeader title={title} image={image} />
+      <PostHeader title={title} image={image} slug={slug} />
       <PostContent content={content} />
     </Container>
   );

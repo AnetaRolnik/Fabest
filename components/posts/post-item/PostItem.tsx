@@ -22,8 +22,6 @@ const PostItem = (props: Props): JSX.Element => {
 
   const linkPath = `/posts/${slug}`;
 
-  console.log(slug);
-
   return (
     <li className={scss.post}>
       <Link href={linkPath} className={scss.link}>
