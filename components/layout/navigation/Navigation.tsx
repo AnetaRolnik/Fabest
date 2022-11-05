@@ -11,7 +11,7 @@ const Navigation = (): JSX.Element => {
           src="/images/logo.svg"
           priority
           width={100}
-          height={80}
+          height={44}
           alt="logo"
           title="logo"
         />

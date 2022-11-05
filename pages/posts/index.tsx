@@ -16,7 +16,7 @@ type Props = {
 
 const AllPostsPage = (props: Props): JSX.Element => {
   return (
-    <Container isGap={true}>
+    <Container>
       <PostsGrid posts={props.allPosts} />
     </Container>
   );

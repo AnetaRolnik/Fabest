@@ -1,25 +1,30 @@
 import Image from "next/image";
-
 import Container from "../../layout/container/Container";
+import { Bodoni_Moda } from "@next/font/google";
+
 import scss from "./Hero.module.scss";
+
+const bodoniModa = Bodoni_Moda({ subsets: ["latin"] });
 
 const Hero = (): JSX.Element => {
   return (
-    <section className={scss.hero}>
+    <div className={`${scss.hero} ${bodoniModa.className}`}>
       <Container>
+        <h1 className={`${scss.heading} ${scss.topHeading}`}>FASHION</h1>
+        <h2 className={`${scss.heading} ${scss.middleHeading}`}>BEAUTY</h2>
+        <h3 className={`${scss.heading} ${scss.bottomHeading}`}>STYLE</h3>
+      </Container>
+      <div className={scss.imgWrapper}>
         <Image
-          src="/images/myAvatar.png"
-          alt="avatar"
-          title="Avatar"
-          width={200}
-          height={200}
-          className={scss.avatar}
+          src="/images/hero.jpg"
+          alt="Fashion Design"
+          title="Photo by Charlota Blunarova on Unsplash"
+          className={scss.img}
+          fill
           priority
         />
-        <div className={scss.title}>Hi, I'm Aneta</div>
-        <p className={scss.text}>This is not a real blog, but it could be.</p>
-      </Container>
-    </section>
+      </div>
+    </div>
   );
 };
 

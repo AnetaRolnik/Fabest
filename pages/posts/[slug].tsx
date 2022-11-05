@@ -9,6 +9,7 @@ type Props = {
     image: string;
     content: string;
   };
+  slug: string;
 };
 
 const SinglePostPage = (props: Props): JSX.Element => {
@@ -31,6 +32,7 @@ export const getStaticProps = (context: { params: { slug: string } }) => {
   return {
     props: {
       post: postData,
+      slug: slug,
     },
   };
 };
