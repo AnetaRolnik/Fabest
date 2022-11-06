@@ -48,11 +48,10 @@
   max-height: calc(100vh - 60px);
 
   @media screen and (min-width: 576px) {
-    width: 60%;
+    width: 50%;
   }
 
   @media screen and (min-width: 768px) {
-    width: 50%;
     max-height: calc(100vh - 80px);
   }
 }

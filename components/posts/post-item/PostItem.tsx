@@ -31,6 +31,9 @@ const PostItem = (props: Props): JSX.Element => {
             fill
             alt={title}
             className={scss.img}
+            sizes="(max-width: 576px) 100vw,
+            (max-width: 992px) 50vw,
+            33vw"
           />
         </div>
         <div className={scss.content}>

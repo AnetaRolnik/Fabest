@@ -22,6 +22,8 @@ const Hero = (): JSX.Element => {
           className={scss.img}
           fill
           priority
+          sizes="(max-width: 576px) 100vw,
+          50vw"
         />
       </div>
     </div>
