@@ -7,7 +7,7 @@ type Props = {
 
 const Container = ({ children, className }: Props): JSX.Element => {
   const classes = `${scss.container} ${className}`;
-  return <div className={classes}>{children}</div>;
+  return <div className={className ? classes : scss.container}>{children}</div>;
 };
 
 export default Container;
