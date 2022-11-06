@@ -8,6 +8,7 @@ type Props = {
     title: string;
     date: string;
     image: string;
+    imageAuthor: string;
     excerpt: string;
     content: string;
     isFeatured: boolean;

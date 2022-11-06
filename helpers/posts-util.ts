@@ -19,7 +19,8 @@ export const getPostData = (postIdentifier: string) => {
     title: data.title,
     date: data.date,
     image: data.image,
-    excerpt: "Sample description",
+    imageAuthor: data.imageAuthor,
+    excerpt: data.excerpt,
     isFeatured: data.isFeatured,
     content,
   };

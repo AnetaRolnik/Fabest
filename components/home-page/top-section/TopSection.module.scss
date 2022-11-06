@@ -1,0 +1,32 @@
+.heading {
+  line-height: 1;
+  margin: 32px 0;
+
+  @media screen and (min-width: 992px) {
+    margin: 40px 0;
+  }
+}
+
+.topHeading {
+  font-size: 60px;
+
+  @media screen and (min-width: 992px) {
+    font-size: 88px;
+  }
+}
+
+.middleHeading {
+  font-size: 52px;
+
+  @media screen and (min-width: 992px) {
+    font-size: 76px;
+  }
+}
+
+.bottomHeading {
+  font-size: 44px;
+
+  @media screen and (min-width: 992px) {
+    font-size: 64px;
+  }
+}

@@ -9,10 +9,11 @@ type Props = {
   date: string;
   excerpt: string;
   image: string;
+  imageAuthor: string;
 };
 
 const PostItem = (props: Props): JSX.Element => {
-  const { slug, title, date, excerpt, image } = props;
+  const { slug, title, date, excerpt, image, imageAuthor } = props;
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
@@ -27,9 +28,10 @@ const PostItem = (props: Props): JSX.Element => {
       <Link href={linkPath} className={scss.link}>
         <div className={scss.header}>
           <Image
-            src={`/images/${slug}/${image}`}
+            src={`/images/posts/${slug}/${image}`}
             fill
             alt={title}
+            title={imageAuthor}
             className={scss.img}
             sizes="(max-width: 576px) 100vw,
             (max-width: 992px) 50vw,

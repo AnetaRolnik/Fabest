@@ -1,24 +1,23 @@
-import Image from "next/image";
+import Hero from "../../layout/hero/Hero";
+import scss from "./PostHeader.module.scss";
 
 type Props = {
   title: string;
-  image: string;
+  img: string;
+  imgAuthor: string;
   slug: string;
 };
 
 const PostHeader = (props: Props): JSX.Element => {
-  const { title, image, slug } = props;
+  const { title, img, imgAuthor, slug } = props;
 
   return (
-    <>
-      <h1>{title}</h1>
-      <Image
-        src={`/images/${slug}/${image}`}
-        width={300}
-        height={300}
-        alt={title}
-      />
-    </>
+    <Hero
+      heading={<h1 className={scss.title}>{title}</h1>}
+      srcImg={`/images/posts/${slug}/${img}`}
+      altImg={title}
+      titleImg={imgAuthor}
+    />
   );
 };
 

@@ -1,4 +1,4 @@
-import Hero from "../components/home-page/hero/Hero";
+import TopSection from "../components/home-page/top-section/TopSection";
 import FeaturedPosts from "../components/home-page/featured-posts/FeaturedPosts";
 import { getFeaturedPosts } from "../helpers/posts-util";
 
@@ -8,6 +8,7 @@ type Props = {
     title: string;
     date: string;
     image: string;
+    imageAuthor: string;
     excerpt: string;
     content: string;
     isFeatured: boolean;
@@ -17,7 +18,7 @@ type Props = {
 const HomePage = (props: Props): JSX.Element => {
   return (
     <>
-      <Hero />
+      <TopSection />
       <FeaturedPosts posts={props.featuredPosts} />
     </>
   );

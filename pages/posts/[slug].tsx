@@ -1,4 +1,3 @@
-import Container from "../../components/layout/container/Container";
 import PostHeader from "../../components/posts/post-detail/PostHeader";
 import PostContent from "../../components/posts/post-detail/PostContent";
 import { getPostData, getPostsFiles } from "../../helpers/posts-util";
@@ -7,6 +6,7 @@ type Props = {
   post: {
     title: string;
     image: string;
+    imageAuthor: string;
     content: string;
   };
   slug: string;
@@ -14,13 +14,18 @@ type Props = {
 
 const SinglePostPage = (props: Props): JSX.Element => {
   const { slug, post } = props;
-  const { title, image, content } = post;
+  const { title, image, imageAuthor, content } = post;
 
   return (
-    <Container>
-      <PostHeader title={title} image={image} slug={slug} />
+    <>
+      <PostHeader
+        title={title}
+        img={image}
+        imgAuthor={imageAuthor}
+        slug={slug}
+      />
       <PostContent content={content} />
-    </Container>
+    </>
   );
 };
 

@@ -1,12 +1,11 @@
 ---
 title: "Phasellus venenatis"
 date: "2022-02-10"
-image: "vogue.jpg"
-excerpt: "Phasellus venenatis vitae turpis eu ornare"
+image: "first-post.jpg"
+imageAuthor: "Photo by Laura Chouette on Unsplash"
+excerpt: "Phasellus venenatis vitae"
 isFeatured: true
 ---
-
-# Phasellus venenatis vitae turpis eu ornare
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit mi neque, pulvinar fermentum felis venenatis nec. Donec ultrices convallis eleifend. Vestibulum porttitor dignissim suscipit. Maecenas varius lacinia nisl, rutrum dignissim nisl laoreet a. Pellentesque feugiat lectus felis, sed maximus mi tempus et. Morbi ac egestas ipsum. Donec quis luctus eros. Nulla placerat massa sed mauris posuere rutrum. Ut elit urna, fringilla in ultrices sit amet, tincidunt at diam.
 

@@ -8,6 +8,7 @@ type Props = {
     title: string;
     date: string;
     image: string;
+    imageAuthor: string;
     excerpt: string;
     content: string;
     isFeatured: boolean;
@@ -27,6 +28,7 @@ const PostsGrid = (props: Props): JSX.Element => {
           date={post.date}
           excerpt={post.excerpt}
           image={post.image}
+          imageAuthor={post.imageAuthor}
         />
       ))}
     </ul>
