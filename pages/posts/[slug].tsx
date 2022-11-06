@@ -24,7 +24,7 @@ const SinglePostPage = (props: Props): JSX.Element => {
         imgAuthor={imageAuthor}
         slug={slug}
       />
-      <PostContent content={content} />
+      <PostContent content={content} slug={slug} />
     </>
   );
 };
