@@ -1,5 +1,7 @@
+import ContactForm from "../components/contact/ContactForm";
+
 const ContactPage = (): JSX.Element => {
-  return <h1>The Contact Page</h1>;
+  return <ContactForm />;
 };
 
 export default ContactPage;
