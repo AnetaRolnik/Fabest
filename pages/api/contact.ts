@@ -1,6 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { MongoClient } from "mongodb";
 
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
+import connectionString from "../../mongodb-data.json";
+
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     const { email, name, message } = req.body;
 
@@ -9,14 +12,32 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
       return;
     }
 
-    // Store it in a database
     const newMessage = {
       email,
       name,
       message,
     };
 
-    console.log(newMessage);
+    let client;
+
+    try {
+      client = await MongoClient.connect(connectionString.data);
+    } catch (error) {
+      res.status(500).json({ message: error });
+      return;
+    }
+
+    const db = client.db();
+
+    try {
+      const result = await db.collection("messages").insertOne(newMessage);
+    } catch (error) {
+      client.close();
+      res.status(500).json({ message: error });
+      return;
+    }
+
+    client.close();
 
     res.status(201).json({ message: newMessage });
   }
