@@ -1,0 +1,29 @@
+.content {
+  text-align: justify;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 auto;
+}
+
+.imgWrapper {
+  text-align: center;
+  position: relative;
+  margin: 16px 0;
+
+  @media screen and (min-width: 768px) {
+    margin: 24px 0;
+  }
+}
+
+.img {
+  object-fit: cover;
+  max-width: 100%;
+
+  @media screen and (min-width: 768px) {
+    object-fit: contain;
+  }
+}
+
+.paragraph {
+  margin-top: 0;
+}
