@@ -12,7 +12,7 @@ const ContactForm = (): JSX.Element => {
         </div>
         <div>
           <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" required />
+          <input type="text" name="name" id="name" />
         </div>
         <div>
           <label htmlFor="message">Message</label>
