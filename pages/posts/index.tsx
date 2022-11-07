@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import PostsGrid from "../../components/posts/posts-grid/PostsGrid";
 import Container from "../../components/layout/container/Container";
 import { getAllPosts } from "../../helpers/posts-util";
@@ -17,9 +19,18 @@ type Props = {
 
 const AllPostsPage = (props: Props): JSX.Element => {
   return (
-    <Container>
-      <PostsGrid posts={props.allPosts} />
-    </Container>
+    <>
+      <Head>
+        <title>Fashion beauty style posts</title>
+        <meta
+          name="description"
+          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        />
+      </Head>
+      <Container>
+        <PostsGrid posts={props.allPosts} />
+      </Container>
+    </>
   );
 };
 
