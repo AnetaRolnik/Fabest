@@ -1,0 +1,43 @@
+.form {
+  max-width: 420px;
+  width: 100%;
+  margin: 32px auto 0;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.input {
+  margin-top: 8px;
+  box-shadow: none;
+  padding: 6px 8px;
+  border: 1px solid #c9c9c9;
+
+  &:focus {
+    border-color: darken(#c9c9c9, 20%);
+    outline: none;
+  }
+
+  &:hover {
+    background-color: #f9f9f9;
+  }
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.actions {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 32px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}

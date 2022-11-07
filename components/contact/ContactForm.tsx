@@ -1,7 +1,6 @@
-import { use, useState } from "react";
+import { useState } from "react";
 
-import Container from "../layout/container/Container";
-import scss from "./Contact.module.scss";
+import scss from "./ContactForm.module.scss";
 
 const ContactForm = (): JSX.Element => {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -25,44 +24,46 @@ const ContactForm = (): JSX.Element => {
   };
 
   return (
-    <Container>
-      <h1>Contact me!</h1>
-      <form onSubmit={sendMessageHandler}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            required
-            value={enteredEmail}
-            onChange={(event) => setEnteredEmail(event.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            value={eneteredName}
-            onChange={(event) => setEnteredName(event.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="message">Message</label>
-          <textarea
-            name="message"
-            id="message"
-            rows={5}
-            required
-            value={enteredMessage}
-            onChange={(event) => setEnteredMessage(event.target.value)}
-          />
-        </div>
-        <button>Send Message</button>
-      </form>
-    </Container>
+    <form onSubmit={sendMessageHandler} className={scss.form}>
+      <div className={scss.control}>
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          value={enteredEmail}
+          onChange={(event) => setEnteredEmail(event.target.value)}
+          className={scss.input}
+        />
+      </div>
+      <div className={scss.control}>
+        <label htmlFor="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value={eneteredName}
+          onChange={(event) => setEnteredName(event.target.value)}
+          className={scss.input}
+        />
+      </div>
+      <div className={scss.control}>
+        <label htmlFor="message">Message</label>
+        <textarea
+          name="message"
+          id="message"
+          rows={5}
+          required
+          value={enteredMessage}
+          onChange={(event) => setEnteredMessage(event.target.value)}
+          className={`${scss.input} ${scss.textarea}`}
+        />
+      </div>
+      <div className={scss.actions}>
+        <button className={scss.btn}>SEND</button>
+      </div>
+    </form>
   );
 };
 
