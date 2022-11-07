@@ -10,6 +10,7 @@ type Props = {
     title: string;
     date: string;
     image: string;
+    imageAuthor: string;
     excerpt: string;
     content: string;
     isFeatured: boolean;
@@ -24,7 +25,7 @@ const FeaturedPosts = (props: Props): JSX.Element => {
       <h2 className={scss.title}>Featured Posts</h2>
       <PostsGrid posts={posts} />
       <Link href="/posts" className={scss.btn}>
-        ALL POSTS
+        All Posts
       </Link>
     </Container>
   );

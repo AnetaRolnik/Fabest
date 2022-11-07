@@ -61,7 +61,7 @@ const ContactForm = (): JSX.Element => {
         />
       </div>
       <div className={scss.actions}>
-        <button className={scss.btn}>SEND</button>
+        <button className={scss.btn}>Send</button>
       </div>
     </form>
   );

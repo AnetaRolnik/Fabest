@@ -13,7 +13,7 @@ const PostContent = (props: Props): JSX.Element => {
   const { content, slug } = props;
 
   const customComponent = {
-    p(paragraph: any) {
+    p(paragraph: { children?: any; node?: any }) {
       const { node } = paragraph;
 
       if (node.children[0].tagName === "img") {
