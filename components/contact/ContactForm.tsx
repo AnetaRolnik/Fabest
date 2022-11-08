@@ -73,7 +73,7 @@ const ContactForm = (): JSX.Element => {
     <>
       <form onSubmit={sendMessageHandler} className={scss.form}>
         <div className={scss.control}>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email*</label>
           <input
             type="email"
             name="email"
@@ -96,7 +96,7 @@ const ContactForm = (): JSX.Element => {
           />
         </div>
         <div className={scss.control}>
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message">Message*</label>
           <textarea
             name="message"
             id="message"
