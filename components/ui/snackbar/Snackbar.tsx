@@ -1,3 +1,5 @@
+import ReactDom from "react-dom";
+
 import scss from "./Snackbar.module.scss";
 
 type Props = {
@@ -18,7 +20,12 @@ const Snackbar = ({ status, message }: Props): JSX.Element => {
 
   const classes = `${scss.snackbar} ${statusClass}`;
 
-  return <div className={classes}>{message}</div>;
+  const portalDiv = document.getElementById("notifications")!;
+
+  return ReactDom.createPortal(
+    <div className={classes}>{message}</div>,
+    portalDiv
+  );
 };
 
 export default Snackbar;
