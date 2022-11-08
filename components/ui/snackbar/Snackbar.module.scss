@@ -1,0 +1,23 @@
+.snackbar {
+  color: #fff;
+  padding: 8px 16px;
+  box-shadow: 0 1px 4px #dedede;
+  position: fixed;
+  bottom: 12px;
+  left: 16px;
+  border-radius: 4px;
+  min-width: 220px;
+
+  @media screen and (min-width: 768px) {
+    left: 48px;
+    right: auto;
+  }
+}
+
+.success {
+  background-color: #449e5d;
+}
+
+.error {
+  background-color: #cf3626;
+}
