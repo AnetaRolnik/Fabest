@@ -41,4 +41,11 @@
   color: #fff;
   cursor: pointer;
   text-transform: uppercase;
+  border: 0;
+
+  &:disabled {
+    cursor: default;
+    background-color: #c9c9c9;
+    color: #000;
+  }
 }

@@ -25,6 +25,7 @@ const ContactForm = (): JSX.Element => {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [eneteredName, setEnteredName] = useState("");
   const [enteredMessage, setEnteredMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [requestStatus, setRequestStatus] = useState("");
 
   useEffect(() => {
@@ -37,6 +38,7 @@ const ContactForm = (): JSX.Element => {
 
   const sendMessageHandler = async (event: React.SyntheticEvent) => {
     event.preventDefault();
+    setIsLoading(true);
 
     const body = {
       email: enteredEmail,
@@ -53,6 +55,8 @@ const ContactForm = (): JSX.Element => {
     } catch (error) {
       setRequestStatus("error");
     }
+
+    setIsLoading(false);
   };
 
   let snackbarMessage;
@@ -104,7 +108,12 @@ const ContactForm = (): JSX.Element => {
           />
         </div>
         <div className={scss.actions}>
-          <button className={scss.btn}>Send</button>
+          {!isLoading && <button className={scss.btn}>Send</button>}
+          {isLoading && (
+            <button className={scss.btn} disabled>
+              Loading..
+            </button>
+          )}
         </div>
       </form>
       {snackbarMessage && (
