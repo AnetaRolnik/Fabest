@@ -2,19 +2,11 @@ import Link from "next/link";
 
 import Container from "../../layout/container/Container";
 import PostsGrid from "../../posts/posts-grid/PostsGrid";
+import { Posts } from "../../../post-types.d";
 import scss from "./FeaturedPosts.module.scss";
 
 type Props = {
-  posts: {
-    slug: string;
-    title: string;
-    date: string;
-    image: string;
-    imageAuthor: string;
-    excerpt: string;
-    content: string;
-    isFeatured: boolean;
-  }[];
+  posts: Posts;
 };
 
 const FeaturedPosts = (props: Props): JSX.Element => {

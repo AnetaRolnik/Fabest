@@ -3,16 +3,24 @@ import Head from "next/head";
 import PostHeader from "../../components/posts/post-detail/PostHeader";
 import PostContent from "../../components/posts/post-detail/PostContent";
 import { getPostData, getPostsFiles } from "../../helpers/posts-util";
+import {
+  PostTitle,
+  PostImage,
+  ImageAuthor,
+  Excerpt,
+  Content,
+  Slug,
+} from "../../post-types.d";
 
 type Props = {
   post: {
-    title: string;
-    image: string;
-    excerpt: string;
-    imageAuthor: string;
-    content: string;
+    title: PostTitle;
+    image: PostImage;
+    excerpt: Excerpt;
+    imageAuthor: ImageAuthor;
+    content: Content;
   };
-  slug: string;
+  slug: Slug;
 };
 
 const SinglePostPage = (props: Props): JSX.Element => {

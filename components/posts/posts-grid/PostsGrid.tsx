@@ -1,18 +1,10 @@
 import PostItem from "../post-item/PostItem";
 
+import { Posts } from "../../../post-types.d";
 import scss from "./PostsGrid.module.scss";
 
 type Props = {
-  posts: {
-    slug: string;
-    title: string;
-    date: string;
-    image: string;
-    imageAuthor: string;
-    excerpt: string;
-    content: string;
-    isFeatured: boolean;
-  }[];
+  posts: Posts;
 };
 
 const PostsGrid = (props: Props): JSX.Element => {

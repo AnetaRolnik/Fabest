@@ -1,15 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
-
+import {
+  Slug,
+  PostTitle,
+  PostDate,
+  Excerpt,
+  PostImage,
+  ImageAuthor,
+} from "../../../post-types.d";
 import scss from "./PostItem.module.scss";
 
 type Props = {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  image: string;
-  imageAuthor: string;
+  slug: Slug;
+  title: PostTitle;
+  date: PostDate;
+  excerpt: Excerpt;
+  image: PostImage;
+  imageAuthor: ImageAuthor;
 };
 
 const PostItem = (props: Props): JSX.Element => {

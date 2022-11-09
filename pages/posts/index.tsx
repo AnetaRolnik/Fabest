@@ -3,18 +3,10 @@ import Head from "next/head";
 import PostsGrid from "../../components/posts/posts-grid/PostsGrid";
 import Container from "../../components/layout/container/Container";
 import { getAllPosts } from "../../helpers/posts-util";
+import { Posts } from "../../post-types.d";
 
 type Props = {
-  allPosts: {
-    slug: string;
-    title: string;
-    date: string;
-    image: string;
-    imageAuthor: string;
-    excerpt: string;
-    content: string;
-    isFeatured: boolean;
-  }[];
+  allPosts: Posts;
 };
 
 const AllPostsPage = (props: Props): JSX.Element => {

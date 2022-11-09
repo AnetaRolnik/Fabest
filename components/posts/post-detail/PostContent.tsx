@@ -2,11 +2,12 @@ import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
 import Container from "../../layout/container/Container";
+import { Slug, Content } from "../../../post-types.d";
 import scss from "./PostContent.module.scss";
 
 type Props = {
-  content: string;
-  slug: string;
+  content: Content;
+  slug: Slug;
 };
 
 const PostContent = (props: Props): JSX.Element => {

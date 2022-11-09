@@ -3,18 +3,10 @@ import Head from "next/head";
 import TopSection from "../components/home-page/top-section/TopSection";
 import FeaturedPosts from "../components/home-page/featured-posts/FeaturedPosts";
 import { getFeaturedPosts } from "../helpers/posts-util";
+import { Posts } from "../post-types.d";
 
 type Props = {
-  featuredPosts: {
-    slug: string;
-    title: string;
-    date: string;
-    image: string;
-    imageAuthor: string;
-    excerpt: string;
-    content: string;
-    isFeatured: boolean;
-  }[];
+  featuredPosts: Posts;
 };
 
 const HomePage = (props: Props): JSX.Element => {
