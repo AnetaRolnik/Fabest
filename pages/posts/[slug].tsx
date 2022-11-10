@@ -3,29 +3,14 @@ import Head from "next/head";
 import PostHeader from "../../components/posts/post-detail/PostHeader";
 import PostContent from "../../components/posts/post-detail/PostContent";
 import { getPostData, getPostsFiles } from "../../helpers/posts-util";
-import {
-  PostTitle,
-  PostImage,
-  ImageAuthor,
-  Excerpt,
-  Content,
-  Slug,
-} from "../../post-types.d";
+import { PostDetails } from "../../post-types.d";
 
 type Props = {
-  post: {
-    title: PostTitle;
-    image: PostImage;
-    excerpt: Excerpt;
-    imageAuthor: ImageAuthor;
-    content: Content;
-  };
-  slug: Slug;
+  post: PostDetails;
 };
 
 const SinglePostPage = (props: Props): JSX.Element => {
-  const { slug, post } = props;
-  const { title, image, excerpt, imageAuthor, content } = post;
+  const { title, image, excerpt, imageAuthor, content, slug } = props.post;
 
   return (
     <>
@@ -35,8 +20,8 @@ const SinglePostPage = (props: Props): JSX.Element => {
       </Head>
       <PostHeader
         title={title}
-        img={image}
-        imgAuthor={imageAuthor}
+        image={image}
+        imageAuthor={imageAuthor}
         slug={slug}
       />
       <PostContent content={content} slug={slug} />
@@ -53,7 +38,6 @@ export const getStaticProps = (context: { params: { slug: string } }) => {
   return {
     props: {
       post: postData,
-      slug: slug,
     },
   };
 };

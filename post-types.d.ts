@@ -6,7 +6,25 @@ export type ImageAuthor = string;
 export type Excerpt = string;
 export type PostDate = string;
 
-export type Posts = {
+export type PostHeader = {
+  image: PostImage;
+  imageAuthor: ImageAuthor;
+  title: PostTitle;
+  slug: Slug;
+};
+
+export type PostItem = PostHeader & {
+  date: PostDate;
+  excerpt: Excerpt;
+};
+
+export type PostDetails = PostHeader & {
+  excerpt: Excerpt;
+  content: Content;
+  slug: Slug;
+};
+
+export type Post = {
   slug: Slug;
   title: PostTitle;
   date: PostDate;
@@ -15,4 +33,6 @@ export type Posts = {
   excerpt: Excerpt;
   content: Content;
   isFeatured: boolean;
-}[];
+};
+
+export type Posts = Post[];

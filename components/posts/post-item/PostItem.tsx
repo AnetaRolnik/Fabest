@@ -1,25 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Slug,
-  PostTitle,
-  PostDate,
-  Excerpt,
-  PostImage,
-  ImageAuthor,
-} from "../../../post-types.d";
+import { PostItem } from "../../../post-types.d";
 import scss from "./PostItem.module.scss";
 
-type Props = {
-  slug: Slug;
-  title: PostTitle;
-  date: PostDate;
-  excerpt: Excerpt;
-  image: PostImage;
-  imageAuthor: ImageAuthor;
-};
-
-const PostItem = (props: Props): JSX.Element => {
+const PostItem = (props: PostItem): JSX.Element => {
   const { slug, title, date, excerpt, image, imageAuthor } = props;
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
