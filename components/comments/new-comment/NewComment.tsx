@@ -4,13 +4,18 @@ const NewComment = ({ onAddComment }: any): JSX.Element => {
   const [enteredAuthor, setEnteredAuthor] = useState("");
   const [enteredComment, setEnteredComment] = useState("");
 
-  const addCommentHandler = (event: React.SyntheticEvent) => {
+  const addCommentHandler = async (event: React.SyntheticEvent) => {
     event.preventDefault();
+
     const newComment = {
       author: enteredAuthor,
       comment: enteredComment,
     };
-    onAddComment(newComment);
+
+    await onAddComment(newComment).then(() => {
+      setEnteredAuthor("");
+      setEnteredComment("");
+    });
   };
 
   return (

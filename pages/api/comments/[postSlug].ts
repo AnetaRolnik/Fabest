@@ -1,12 +1,22 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { MongoClient } from "mongodb";
 
-import connectionString from "../../../mongodb-data.json";
+import {
+  connectDatabase,
+  insertDocument,
+  getAllDocuments,
+} from "../../../helpers/db-util";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const postSlug = req.query.postSlug;
 
-  const client = await MongoClient.connect(connectionString.data);
+  let client;
+
+  try {
+    client = await connectDatabase();
+  } catch (error) {
+    res.status(500).json({ message: error });
+    return;
+  }
 
   if (req.method === "POST") {
     const { author, comment } = req.body;
@@ -22,21 +32,32 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       postSlug,
     };
 
-    const db = client.db();
-
-    await db.collection("comments").insertOne(newComment);
+    try {
+      const result = await insertDocument(client, "comments", newComment);
+    } catch (error) {
+      client.close();
+      res.status(500).json({ message: error });
+      return;
+    }
 
     res.status(201).json({ message: "OK", comment: newComment });
   }
 
   if (req.method === "GET") {
-    const db = client.db();
+    let documents;
 
-    const documents = await db
-      .collection("comments")
-      .find({ postSlug })
-      .sort({ _id: -1 })
-      .toArray();
+    try {
+      documents = await getAllDocuments(
+        client,
+        "comments",
+        { postSlug },
+        { _id: -1 }
+      );
+    } catch (error) {
+      client.close();
+      res.status(500).json({ message: error });
+      return;
+    }
 
     res.status(200).json({ comments: documents });
   }

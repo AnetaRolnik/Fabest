@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { MongoClient } from "mongodb";
 
-import connectionString from "../../mongodb-data.json";
+import { connectDatabase, insertDocument } from "../../helpers/db-util";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
@@ -21,16 +20,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     let client;
 
     try {
-      client = await MongoClient.connect(connectionString.data);
+      client = await connectDatabase();
     } catch (error) {
       res.status(500).json({ message: error });
       return;
     }
 
-    const db = client.db();
-
     try {
-      const result = await db.collection("messages").insertOne(newMessage);
+      const result = await insertDocument(client, "messages", newMessage);
     } catch (error) {
       client.close();
       res.status(500).json({ message: error });
