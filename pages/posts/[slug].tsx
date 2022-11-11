@@ -26,7 +26,7 @@ const SinglePostPage = (props: Props): JSX.Element => {
         slug={slug}
       />
       <PostContent content={content} slug={slug} />
-      <Comments />
+      <Comments slug={slug} />
     </>
   );
 };

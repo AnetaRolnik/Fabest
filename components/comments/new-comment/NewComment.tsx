@@ -1,13 +1,16 @@
 import { useState } from "react";
 
-const NewComment = (): JSX.Element => {
+const NewComment = ({ onAddComment }: any): JSX.Element => {
   const [enteredAuthor, setEnteredAuthor] = useState("");
   const [enteredComment, setEnteredComment] = useState("");
 
   const addCommentHandler = (event: React.SyntheticEvent) => {
     event.preventDefault();
-
-    console.log(enteredAuthor, enteredComment);
+    const newComment = {
+      author: enteredAuthor,
+      comment: enteredComment,
+    };
+    onAddComment(newComment);
   };
 
   return (

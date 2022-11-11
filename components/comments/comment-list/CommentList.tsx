@@ -1,8 +1,9 @@
+import { ObjectId } from "mongodb";
 import CommentItem from "../comment-item/CommentItem";
 
 type Props = {
   comments: {
-    id: string;
+    _id: ObjectId;
     author: string;
     comment: string;
   }[];
@@ -15,7 +16,7 @@ const CommentList = (props: Props): JSX.Element => {
     <div>
       {comments.map((comment) => (
         <CommentItem
-          key={comment.id}
+          key={comment._id.toString()}
           comment={{ author: comment.author, comment: comment.comment }}
         />
       ))}
