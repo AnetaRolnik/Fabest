@@ -4,6 +4,7 @@ import PostHeader from "../../components/posts/post-detail/PostHeader";
 import PostContent from "../../components/posts/post-detail/PostContent";
 import { getPostData, getPostsFiles } from "../../helpers/posts-util";
 import { PostDetails } from "../../post-types.d";
+import Comments from "../../components/comments/Comments";
 
 type Props = {
   post: PostDetails;
@@ -25,6 +26,7 @@ const SinglePostPage = (props: Props): JSX.Element => {
         slug={slug}
       />
       <PostContent content={content} slug={slug} />
+      <Comments />
     </>
   );
 };
