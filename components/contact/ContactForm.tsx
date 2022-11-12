@@ -47,6 +47,7 @@ const ContactForm = (): JSX.Element => {
       setEnteredEmail("");
       setEnteredName("");
       setEnteredMessage("");
+
       snackbarCtx.showSnackbar({
         status: "success",
         message: "Message sent successfully!",

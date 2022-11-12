@@ -1,7 +1,7 @@
 import scss from "./Container.module.scss";
 
 type Props = {
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode;
   className?: string;
 };
 
