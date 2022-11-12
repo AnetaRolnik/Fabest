@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
+import SnackbarContext from "../../store/snackbar-context";
 import Snackbar from "../ui/snackbar/Snackbar";
 import scss from "./ContactForm.module.scss";
 
@@ -26,15 +27,10 @@ const ContactForm = (): JSX.Element => {
   const [eneteredName, setEnteredName] = useState("");
   const [enteredMessage, setEnteredMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [requestStatus, setRequestStatus] = useState("");
 
-  useEffect(() => {
-    if (requestStatus) {
-      const timer = setTimeout(() => setRequestStatus(""), 4000);
+  const snackbarCtx = useContext(SnackbarContext);
 
-      return () => clearTimeout(timer);
-    }
-  }, [requestStatus]);
+  const activeSnackbar = snackbarCtx.snackbar;
 
   const sendMessageHandler = async (event: React.SyntheticEvent) => {
     event.preventDefault();
@@ -48,26 +44,22 @@ const ContactForm = (): JSX.Element => {
 
     try {
       await sendContactData(body);
-      setRequestStatus("success");
       setEnteredEmail("");
       setEnteredName("");
       setEnteredMessage("");
+      snackbarCtx.showSnackbar({
+        status: "success",
+        message: "Message sent successfully!",
+      });
     } catch (error) {
-      setRequestStatus("error");
+      snackbarCtx.showSnackbar({
+        status: "error",
+        message: "Something went wrong, please try again.",
+      });
     }
 
     setIsLoading(false);
   };
-
-  let snackbarMessage;
-
-  if (requestStatus === "success") {
-    snackbarMessage = "Message sent successfully!";
-  }
-
-  if (requestStatus === "error") {
-    snackbarMessage = "Something went wrong, please try again.";
-  }
 
   return (
     <>
@@ -116,8 +108,11 @@ const ContactForm = (): JSX.Element => {
           )}
         </div>
       </form>
-      {snackbarMessage && (
-        <Snackbar status={requestStatus} message={snackbarMessage} />
+      {activeSnackbar && (
+        <Snackbar
+          status={activeSnackbar.status}
+          message={activeSnackbar.message}
+        />
       )}
     </>
   );
