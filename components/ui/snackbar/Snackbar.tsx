@@ -1,13 +1,9 @@
 import ReactDom from "react-dom";
 
+import { Snackbar } from "../../../types/snackbar";
 import scss from "./Snackbar.module.scss";
 
-type Props = {
-  status: string;
-  message: string;
-};
-
-const Snackbar = ({ status, message }: Props): JSX.Element => {
+const Snackbar = ({ status, message }: Snackbar): JSX.Element => {
   let statusClass = "";
 
   if (status === "success") {

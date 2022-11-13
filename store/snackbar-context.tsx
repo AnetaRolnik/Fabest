@@ -1,24 +1,23 @@
 import { createContext, useState, useEffect } from "react";
 
+import { Snackbar } from "../types/snackbar";
+
 type Props = {
   children: React.ReactNode;
 };
 
 type SnackbarContextType = {
-  snackbar: { status: string; message: string } | null;
-  showSnackbar: (data: { status: string; message: string }) => void;
+  snackbar: Snackbar | null;
+  showSnackbar: (data: Snackbar) => void;
 };
 
 const SnackbarContext = createContext<SnackbarContextType>({
   snackbar: null,
-  showSnackbar: (data: { status: string; message: string }) => {},
+  showSnackbar: (data: Snackbar) => {},
 });
 
 export const SnackbarContextProvider = (props: Props) => {
-  const [activeSnackbar, setActiveSnackbar] = useState<{
-    status: string;
-    message: string;
-  } | null>(null);
+  const [activeSnackbar, setActiveSnackbar] = useState<Snackbar | null>(null);
 
   useEffect(() => {
     if (activeSnackbar) {
@@ -28,10 +27,7 @@ export const SnackbarContextProvider = (props: Props) => {
     }
   }, [activeSnackbar]);
 
-  const showSnackbarHandler = (snackbarData: {
-    status: string;
-    message: string;
-  }) => {
+  const showSnackbarHandler = (snackbarData: Snackbar) => {
     setActiveSnackbar(snackbarData);
   };
 

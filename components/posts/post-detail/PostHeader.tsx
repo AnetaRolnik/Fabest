@@ -1,5 +1,5 @@
 import Hero from "../../layout/hero/Hero";
-import { PostHeader } from "../../../post-types.d";
+import { PostHeader } from "../../../types/post";
 import scss from "./PostHeader.module.scss";
 
 const PostHeader = (props: PostHeader): JSX.Element => {

@@ -1,10 +1,8 @@
+import { CommentContent } from "../../../types/comment";
 import scss from "./CommentItem.module.scss";
 
 type Props = {
-  comment: {
-    author: string;
-    comment: string;
-  };
+  comment: CommentContent;
 };
 
 const CommentItem = (props: Props) => {

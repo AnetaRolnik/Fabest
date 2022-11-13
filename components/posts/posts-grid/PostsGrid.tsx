@@ -1,6 +1,6 @@
 import PostItem from "../post-item/PostItem";
 
-import { Posts } from "../../../post-types.d";
+import { Posts } from "../../../types/post";
 import scss from "./PostsGrid.module.scss";
 
 type Props = {

@@ -1,11 +1,16 @@
 import { useEffect, useState, useContext } from "react";
-import { ObjectId } from "mongodb";
 
 import SnackbarContext from "../../store/snackbar-context";
 import NewComment from "./new-comment/NewComment";
 import CommentList from "./comment-list/CommentList";
 import Snackbar from "../ui/snackbar/Snackbar";
-import { Slug } from "../../post-types";
+import { Slug } from "../../types/post";
+import {
+  Author,
+  Content,
+  CommentId,
+  CommentContent,
+} from "../../types/comment";
 
 type Props = {
   slug: Slug;
@@ -15,7 +20,7 @@ const Comments = (props: Props): JSX.Element => {
   const { slug } = props;
 
   const [comments, setComments] = useState<
-    { author: string; comment: string; postSlug: String; _id: ObjectId }[]
+    { author: Author; comment: Content; postSlug: Slug; _id: CommentId }[]
   >([]);
 
   const snackbarCtx = useContext(SnackbarContext);
@@ -28,10 +33,7 @@ const Comments = (props: Props): JSX.Element => {
       .then((data) => setComments(data.comments));
   }, [setComments]);
 
-  const addCommentHandler = async (comment: {
-    author: string;
-    comment: string;
-  }) => {
+  const addCommentHandler = async (comment: CommentContent) => {
     try {
       const response = await fetch(`/api/comments/${slug}`, {
         method: "POST",

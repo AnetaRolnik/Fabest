@@ -21,7 +21,6 @@ export type PostItem = PostHeader & {
 export type PostDetails = PostHeader & {
   excerpt: Excerpt;
   content: Content;
-  slug: Slug;
 };
 
 export type Post = {

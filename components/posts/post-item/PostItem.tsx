@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { PostItem } from "../../../post-types.d";
+import { PostItem } from "../../../types/post";
 import scss from "./PostItem.module.scss";
 
 const PostItem = (props: PostItem): JSX.Element => {

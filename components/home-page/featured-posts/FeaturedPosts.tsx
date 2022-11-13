@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Container from "../../layout/container/Container";
 import PostsGrid from "../../posts/posts-grid/PostsGrid";
 import Button from "../../ui/button/Button";
-import { Posts } from "../../../post-types.d";
+import { Posts } from "../../../types/post";
 import scss from "./FeaturedPosts.module.scss";
 
 type Props = {

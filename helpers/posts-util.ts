@@ -3,11 +3,13 @@ import path from "path";
 
 import matter from "gray-matter";
 
+import { Slug } from "../types/post";
+
 const postsDirectory = path.join(process.cwd(), "posts");
 
 export const getPostsFiles = () => fs.readdirSync(postsDirectory);
 
-export const getPostData = (postIdentifier: string) => {
+export const getPostData = (postIdentifier: Slug) => {
   const postSlug = postIdentifier.replace(/\.md$/, "");
   const filePath = path.join(postsDirectory, `${postSlug}.md`);
   const fileContent = fs.readFileSync(filePath, "utf8");

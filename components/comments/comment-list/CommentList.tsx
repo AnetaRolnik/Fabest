@@ -1,14 +1,10 @@
-import { ObjectId } from "mongodb";
 import CommentItem from "../comment-item/CommentItem";
+import { Comments } from "../../../types/comment";
 
 import scss from "./CommentList.module.scss";
 
 type Props = {
-  comments: {
-    _id: ObjectId;
-    author: string;
-    comment: string;
-  }[];
+  comments: Comments;
 };
 
 const CommentList = (props: Props): JSX.Element => {

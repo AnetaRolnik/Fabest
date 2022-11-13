@@ -2,7 +2,7 @@ import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
 import Container from "../../layout/container/Container";
-import { Slug, Content } from "../../../post-types.d";
+import { Slug, Content } from "../../../types/post";
 import scss from "./PostContent.module.scss";
 
 type Props = {

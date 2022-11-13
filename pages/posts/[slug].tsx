@@ -3,7 +3,7 @@ import Head from "next/head";
 import PostHeader from "../../components/posts/post-detail/PostHeader";
 import PostContent from "../../components/posts/post-detail/PostContent";
 import { getPostData, getPostsFiles } from "../../helpers/posts-util";
-import { PostDetails } from "../../post-types.d";
+import { PostDetails, Slug } from "../../types/post";
 import Container from "../../components/layout/container/Container";
 import Comments from "../../components/comments/Comments";
 
@@ -34,7 +34,7 @@ const SinglePostPage = (props: Props): JSX.Element => {
   );
 };
 
-export const getStaticProps = (context: { params: { slug: string } }) => {
+export const getStaticProps = (context: { params: { slug: Slug } }) => {
   const { params } = context;
   const { slug } = params;
 
@@ -50,7 +50,7 @@ export const getStaticProps = (context: { params: { slug: string } }) => {
 export const getStaticPaths = () => {
   const postFilenames = getPostsFiles();
 
-  const slugs: string[] = postFilenames.map((filename) =>
+  const slugs: Slug[] = postFilenames.map((filename) =>
     filename.replace(/\.md$/, "")
   );
 

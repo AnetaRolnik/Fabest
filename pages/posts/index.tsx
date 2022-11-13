@@ -3,7 +3,7 @@ import Head from "next/head";
 import PostsGrid from "../../components/posts/posts-grid/PostsGrid";
 import Container from "../../components/layout/container/Container";
 import { getAllPosts } from "../../helpers/posts-util";
-import { Posts } from "../../post-types.d";
+import { Posts } from "../../types/post";
 
 type Props = {
   allPosts: Posts;

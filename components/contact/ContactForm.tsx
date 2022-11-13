@@ -6,13 +6,10 @@ import FormControl from "../ui/form-control/FormControl";
 import Textarea from "../ui/textarea/Textarea";
 import Input from "../ui/input/Input";
 import Button from "../ui/button/Button";
+import { ContactData } from "../../types/contact";
 import scss from "./ContactForm.module.scss";
 
-const sendContactData = async (contactDetails: {
-  email: string;
-  name: string;
-  message: string;
-}) => {
+const sendContactData = async (contactDetails: ContactData) => {
   const response = await fetch("/api/contact", {
     method: "POST",
     body: JSON.stringify(contactDetails),

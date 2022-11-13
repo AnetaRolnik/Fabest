@@ -4,8 +4,13 @@ import FormControl from "../../ui/form-control/FormControl";
 import Textarea from "../../ui/textarea/Textarea";
 import Input from "../../ui/input/Input";
 import Button from "../../ui/button/Button";
+import { CommentContent } from "../../../types/comment";
 
-const NewComment = ({ onAddComment }: any): JSX.Element => {
+type Props = {
+  onAddComment: (comment: CommentContent) => Promise<void>;
+};
+
+const NewComment = ({ onAddComment }: Props): JSX.Element => {
   const [enteredAuthor, setEnteredAuthor] = useState("");
   const [enteredComment, setEnteredComment] = useState("");
 
