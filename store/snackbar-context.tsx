@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 
 type Props = {
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode;
 };
 
 type SnackbarContextType = {

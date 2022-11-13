@@ -10,10 +10,6 @@ import { Slug } from "../../post-types";
 
 type Props = {
   slug: Slug;
-  comment: {
-    author: string;
-    comment: string;
-  };
 };
 
 const Comments = (props: Props): JSX.Element => {
@@ -33,7 +29,10 @@ const Comments = (props: Props): JSX.Element => {
       .then((data) => setComments(data.comments));
   }, [setComments]);
 
-  const addCommentHandler = async (comment: Props) => {
+  const addCommentHandler = async (comment: {
+    author: string;
+    comment: string;
+  }) => {
     try {
       const response = await fetch(`/api/comments/${slug}`, {
         method: "POST",
