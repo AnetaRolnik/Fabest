@@ -1,5 +1,10 @@
 import { useState } from "react";
 
+import FormControl from "../../ui/form-control/FormControl";
+import Textarea from "../../ui/textarea/Textarea";
+import Input from "../../ui/input/Input";
+import Button from "../../ui/button/Button";
+
 const NewComment = ({ onAddComment }: any): JSX.Element => {
   const [enteredAuthor, setEnteredAuthor] = useState("");
   const [enteredComment, setEnteredComment] = useState("");
@@ -20,29 +25,28 @@ const NewComment = ({ onAddComment }: any): JSX.Element => {
 
   return (
     <form onSubmit={addCommentHandler}>
-      <div>
+      <FormControl>
         <label htmlFor="author">Author*</label>
-        <input
+        <Input
           type="text"
           name="author"
           id="author"
-          required
+          required={true}
           value={enteredAuthor}
           onChange={(event) => setEnteredAuthor(event.target.value)}
         />
-      </div>
-      <div>
+      </FormControl>
+      <FormControl>
         <label htmlFor="comment">Comment*</label>
-        <textarea
+        <Textarea
           name="comment"
           id="comment"
-          rows={5}
-          required
+          required={true}
           value={enteredComment}
           onChange={(event) => setEnteredComment(event.target.value)}
         />
-      </div>
-      <button>Send</button>
+      </FormControl>
+      <Button>Send</Button>
     </form>
   );
 };

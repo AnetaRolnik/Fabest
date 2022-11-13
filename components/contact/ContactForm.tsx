@@ -1,7 +1,11 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 
 import SnackbarContext from "../../store/snackbar-context";
 import Snackbar from "../ui/snackbar/Snackbar";
+import FormControl from "../ui/form-control/FormControl";
+import Textarea from "../ui/textarea/Textarea";
+import Input from "../ui/input/Input";
+import Button from "../ui/button/Button";
 import scss from "./ContactForm.module.scss";
 
 const sendContactData = async (contactDetails: {
@@ -65,48 +69,40 @@ const ContactForm = (): JSX.Element => {
   return (
     <>
       <form onSubmit={sendMessageHandler} className={scss.form}>
-        <div className={scss.control}>
+        <FormControl>
           <label htmlFor="email">Email*</label>
-          <input
+          <Input
             type="email"
             name="email"
             id="email"
-            required
+            required={true}
             value={enteredEmail}
             onChange={(event) => setEnteredEmail(event.target.value)}
-            className={scss.input}
           />
-        </div>
-        <div className={scss.control}>
+        </FormControl>
+        <FormControl>
           <label htmlFor="name">Name</label>
-          <input
+          <Input
             type="text"
             name="name"
             id="name"
             value={eneteredName}
             onChange={(event) => setEnteredName(event.target.value)}
-            className={scss.input}
           />
-        </div>
-        <div className={scss.control}>
+        </FormControl>
+        <FormControl>
           <label htmlFor="message">Message*</label>
-          <textarea
+          <Textarea
             name="message"
             id="message"
-            rows={5}
-            required
+            required={true}
             value={enteredMessage}
             onChange={(event) => setEnteredMessage(event.target.value)}
-            className={`${scss.input} ${scss.textarea}`}
           />
-        </div>
+        </FormControl>
         <div className={scss.actions}>
-          {!isLoading && <button className={scss.btn}>Send</button>}
-          {isLoading && (
-            <button className={scss.btn} disabled>
-              Loading..
-            </button>
-          )}
+          {!isLoading && <Button>Send</Button>}
+          {isLoading && <Button disabled={true}>Loading...</Button>}
         </div>
       </form>
       {activeSnackbar && (
