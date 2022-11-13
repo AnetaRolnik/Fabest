@@ -2,7 +2,6 @@ import { useEffect, useState, useContext } from "react";
 import { ObjectId } from "mongodb";
 
 import SnackbarContext from "../../store/snackbar-context";
-import Container from "../layout/container/Container";
 import NewComment from "./new-comment/NewComment";
 import CommentList from "./comment-list/CommentList";
 import Snackbar from "../ui/snackbar/Snackbar";
@@ -58,7 +57,7 @@ const Comments = (props: Props): JSX.Element => {
   };
 
   return (
-    <Container>
+    <>
       <h2>Comments</h2>
       <NewComment onAddComment={addCommentHandler} />
       <CommentList comments={comments} />
@@ -68,7 +67,7 @@ const Comments = (props: Props): JSX.Element => {
           message={activeSnackbar.message}
         />
       )}
-    </Container>
+    </>
   );
 };
 

@@ -38,9 +38,9 @@ const PostContent = (props: Props): JSX.Element => {
   };
 
   return (
-    <Container className={scss.content}>
-      <ReactMarkdown components={customComponent}>{content}</ReactMarkdown>
-    </Container>
+    <ReactMarkdown className={scss.content} components={customComponent}>
+      {content}
+    </ReactMarkdown>
   );
 };
 

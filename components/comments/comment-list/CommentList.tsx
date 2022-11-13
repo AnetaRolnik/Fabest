@@ -1,6 +1,8 @@
 import { ObjectId } from "mongodb";
 import CommentItem from "../comment-item/CommentItem";
 
+import scss from "./CommentList.module.scss";
+
 type Props = {
   comments: {
     _id: ObjectId;
@@ -13,7 +15,7 @@ const CommentList = (props: Props): JSX.Element => {
   const { comments } = props;
 
   return (
-    <div>
+    <div className={scss.comments}>
       {comments.map((comment) => (
         <CommentItem
           key={comment._id.toString()}
