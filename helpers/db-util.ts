@@ -1,9 +1,7 @@
 import { MongoClient } from "mongodb";
 
-import connectionString from "../mongodb-data.json";
-
 export const connectDatabase = async () => {
-  const client = await MongoClient.connect(connectionString.data);
+  const client = await MongoClient.connect(process.env.DATABASE_URL!);
 
   return client;
 };
