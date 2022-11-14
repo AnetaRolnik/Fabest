@@ -24,7 +24,6 @@ const Hero = ({ heading, srcImg, altImg, titleImg }: Props): JSX.Element => {
           className={scss.img}
           fill
           priority
-          quality={100}
           sizes="(max-width: 576px) 100vw, 50vw"
         />
       </div>
