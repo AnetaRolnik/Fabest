@@ -31,7 +31,7 @@ const Comments = (props: Props): JSX.Element => {
     fetch(`/api/comments/${slug}`)
       .then((response) => response.json())
       .then((data) => setComments(data.comments));
-  }, [setComments]);
+  }, [setComments, slug]);
 
   const addCommentHandler = async (comment: CommentContent) => {
     try {
