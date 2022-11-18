@@ -3,6 +3,11 @@
 }
 
 .title {
-  font-size: 36px;
-  margin: 0 0 32px;
+  font-size: 32px;
+  margin: 0 0 24px;
+
+  @media screen and (min-width: 576px) {
+    font-size: 36px;
+    margin-bottom: 32px;
+  }
 }

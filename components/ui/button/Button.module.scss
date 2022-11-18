@@ -6,10 +6,16 @@
   text-transform: uppercase;
   border: 0;
   cursor: pointer;
+  width: 100%;
+  margin: 8px 0;
 
   &:disabled {
     cursor: default;
     background-color: #c9c9c9;
     color: #000;
+  }
+
+  @media screen and (min-width: 576px) {
+    width: auto;
   }
 }
