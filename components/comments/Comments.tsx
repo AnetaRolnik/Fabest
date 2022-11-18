@@ -11,6 +11,7 @@ import {
   CommentId,
   CommentContent,
 } from "../../types/comment";
+import Button from "../ui/button/Button";
 
 type Props = {
   slug: Slug;
@@ -23,14 +24,21 @@ const Comments = (props: Props): JSX.Element => {
     { author: Author; comment: Content; postSlug: Slug; _id: CommentId }[]
   >([]);
 
+  const [showButton, setShowButton] = useState(false);
+
   const snackbarCtx = useContext(SnackbarContext);
 
   const activeSnackbar = snackbarCtx.snackbar;
 
+  const postsNumberToStart = 5;
+
   useEffect(() => {
-    fetch(`/api/comments/${slug}`)
+    fetch(`/api/comments/${slug}?limit=${postsNumberToStart}`)
       .then((response) => response.json())
-      .then((data) => setComments(data.comments));
+      .then((data) => {
+        setComments(data.comments);
+        data.postsNumber > postsNumberToStart && setShowButton(true);
+      });
   }, [setComments, slug]);
 
   const addCommentHandler = async (comment: CommentContent) => {
@@ -58,11 +66,21 @@ const Comments = (props: Props): JSX.Element => {
     }
   };
 
+  const showAllCommentsHandler = () => {
+    fetch(`/api/comments/${slug}?offset=${postsNumberToStart}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setComments((featuredPosts) => [...featuredPosts, ...data.comments]);
+        setShowButton(false);
+      });
+  };
+
   return (
     <>
       <h2>Comments</h2>
       <NewComment onAddComment={addCommentHandler} />
       <CommentList comments={comments} />
+      {showButton && <Button onClick={showAllCommentsHandler}>Show all</Button>}
       {activeSnackbar && (
         <Snackbar
           status={activeSnackbar.status}

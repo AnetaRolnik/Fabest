@@ -18,10 +18,12 @@ export const insertDocument = async (
   return result;
 };
 
-export const getAllDocuments = async (
+export const getDocuments = async (
   client: MongoClient,
   collection: string,
   filter: {},
+  limit: number,
+  offset: number,
   sort: {}
 ) => {
   const db = client.db();
@@ -30,7 +32,25 @@ export const getAllDocuments = async (
     .collection(collection)
     .find(filter)
     .sort(sort)
+    .limit(limit)
+    .skip(offset)
     .toArray();
 
   return documents;
+};
+
+export const countDocuments = async (
+  client: MongoClient,
+  collection: string,
+  filter: string | string[] | undefined
+) => {
+  const db = client.db();
+
+  const allDocuments = db.collection(collection);
+
+  const postsNumber = await allDocuments.countDocuments({
+    postSlug: filter,
+  });
+
+  return postsNumber;
 };
