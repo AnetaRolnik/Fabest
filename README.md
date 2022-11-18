@@ -8,7 +8,6 @@ This blog is a SPA with a minimalist design. It has a start page with some featu
 I'm going to add the following features:
 
 - categories of posts, the ability to select a specific category,
-- only last 5 comments to start, all comments only after button click,
 - tests for the contact form and for adding comments
 
 ## Technologies used in the project
