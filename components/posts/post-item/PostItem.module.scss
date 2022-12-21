@@ -13,6 +13,10 @@
   &:hover {
     box-shadow: 0 1px 4px 2px #dedede;
   }
+
+  @media screen and (min-width: 576px) {
+    height: 100%
+  }
 }
 
 .header {
