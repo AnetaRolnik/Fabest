@@ -5,6 +5,7 @@ export type PostImage = string;
 export type ImageAuthor = string;
 export type Excerpt = string;
 export type PostDate = string;
+export type Tag = string | null;
 
 export type PostHeader = {
   image: PostImage;
@@ -16,6 +17,7 @@ export type PostHeader = {
 export type PostItem = PostHeader & {
   date: PostDate;
   excerpt: Excerpt;
+  tag: Tag;
 };
 
 export type PostDetails = PostHeader & {
@@ -32,6 +34,7 @@ export type Post = {
   excerpt: Excerpt;
   content: Content;
   isFeatured: boolean;
+  tag: Tag;
 };
 
 export type Posts = Post[];

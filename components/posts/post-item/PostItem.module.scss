@@ -31,7 +31,8 @@
 }
 
 .content {
-  padding: 16px;
+  padding: 20px 16px;
+  position: relative;
 
   h3 {
     margin: 0;
@@ -46,4 +47,22 @@
   p {
     margin-bottom: 0;
   }
+}
+
+.badge {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  border-radius: 20px;
+  padding: 0 8px;
+  font-size: 12px;
+  background-color: #f9f9f9;
+}
+
+.beauty {
+  background-color: #c0edcb;
+}
+
+.fashion {
+  background-color: #edd5ed;
 }

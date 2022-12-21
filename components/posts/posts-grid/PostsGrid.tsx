@@ -21,6 +21,7 @@ const PostsGrid = (props: Props): JSX.Element => {
           excerpt={post.excerpt}
           image={post.image}
           imageAuthor={post.imageAuthor}
+          tag={post.tag}
         />
       ))}
     </ul>

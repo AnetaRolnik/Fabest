@@ -5,6 +5,7 @@ image: "fourth-post.jpg"
 imageAuthor: "Photo by pmv chamara on Unsplash"
 excerpt: "Pellentesque a egestas sem, et viverra libero"
 isFeatured: true
+tag: 'beauty'
 ---
 
 **In euismod, mauris ut pretium gravida, eros orci sagittis sem, sit amet lacinia leo turpis id ipsum. Curabitur erat augue, faucibus vel consectetur et, aliquam eu ante. Curabitur nec finibus quam. Fusce et purus at nunc scelerisque pharetra. Praesent dapibus efficitur justo id malesuada. Sed at felis eu orci tincidunt mollis non nec magna. Proin id ultricies enim, quis suscipit metus. Quisque et mauris volutpat, gravida leo quis, ultrices neque. Proin metus mauris, dignissim ut commodo vel, vestibulum vel augue. Nullam viverra quis felis at vehicula. Aenean orci felis, mattis non blandit viverra, dignissim quis neque. Suspendisse potenti. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit mi neque, pulvinar fermentum felis venenatis nec.**

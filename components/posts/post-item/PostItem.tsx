@@ -4,7 +4,7 @@ import { PostItem } from "../../../types/post";
 import scss from "./PostItem.module.scss";
 
 const PostItem = (props: PostItem): JSX.Element => {
-  const { slug, title, date, excerpt, image, imageAuthor } = props;
+  const { slug, title, date, excerpt, image, imageAuthor, tag } = props;
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
@@ -30,6 +30,7 @@ const PostItem = (props: PostItem): JSX.Element => {
           />
         </div>
         <div className={scss.content}>
+          {tag && <span className={`${scss.badge} ${scss[tag]}`}>{tag}</span>}
           <h3>{title}</h3>
           <time>{formattedDate}</time>
           <p>{excerpt}</p>

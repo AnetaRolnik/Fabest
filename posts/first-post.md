@@ -5,6 +5,7 @@ image: "first-post.jpg"
 imageAuthor: "Photo by Hong Nguyen on Unsplash"
 excerpt: "Donec ultrices convallis eleifend"
 isFeatured: true
+tag: 'fashion'
 ---
 
 **Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit mi neque, pulvinar fermentum felis venenatis nec. Donec ultrices convallis eleifend. Vestibulum porttitor dignissim suscipit. Maecenas varius lacinia nisl, rutrum dignissim nisl laoreet a. Pellentesque feugiat lectus felis, sed maximus mi tempus et. Morbi ac egestas ipsum. Donec quis luctus eros. Nulla placerat massa sed mauris posuere rutrum. Ut elit urna, fringilla in ultrices sit amet, tincidunt at diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit mi neque, pulvinar fermentum felis venenatis nec. Donec ultrices convallis eleifend. Vestibulum porttitor dignissim suscipit. Maecenas varius lacinia nisl, rutrum dignissim nisl laoreet a. Pellentesque feugiat lectus felis, sed maximus mi tempus et.**

@@ -24,6 +24,7 @@ export const getPostData = (postIdentifier: Slug) => {
     imageAuthor: data.imageAuthor,
     excerpt: data.excerpt,
     isFeatured: data.isFeatured,
+    tag: data.tag ?? null,
     content,
   };
 
